@@ -1,5 +1,7 @@
 # Dribbble API Wrapper for Node and CommonJS
 
+![Dribbble](http://dribbble.com/images/dribbble-ball-big.png?1336176471)
+
 `node-dribbble` is a simple Javascript Wrapper for Dribbble's API. Supports pagination. Simple interface.
 
 ## Installation
