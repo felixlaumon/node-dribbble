@@ -1,6 +1,6 @@
 {
   "author": "Felix Lau <felixlaumon@gmail.com>",
-  "name": "node-dribbble",
+  "name": "dribbble",
   "description": "Javascript Wrapper for Dribbble's API. Supports pagination. Simple interface.",
   "version": "0.0.1",
   "repository": {
