@@ -2,6 +2,8 @@
 
 ![Dribbble](http://dribbble.com/images/dribbble-ball-big.png?1336176471)
 
+[![Build Status](https://secure.travis-ci.org/felixlaumon/node-dribbble.png)](http://travis-ci.org/felixlaumon/node-dribbble)
+
 `node-dribbble` is a simple Javascript Wrapper for Dribbble's API. Supports pagination. Simple interface.
 
 ## Installation
