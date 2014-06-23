@@ -1,4 +1,4 @@
-var Dribbble = require('../lib/dribbble').Dribbble;
+var Dribbble = require('dribbble').Dribbble;
 var d = new Dribbble();
 
 // "id", cb
