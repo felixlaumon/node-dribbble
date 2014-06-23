@@ -1,9 +1,11 @@
+'use strict';
+
 var Dribbble;
 var d;
 
 describe("Dribbble", function(){
   it("should be initialized", function() {
-    Dribbble = require('../lib/dribbble').Dribbble;
+    Dribbble = require('../lib/index').Dribbble;
     d = new Dribbble();
   });
 });

@@ -1,0 +1,20 @@
+{
+  "node" : true,
+
+  // Enforcing
+  "curly" : true,
+  "eqeqeq" : true,
+  "strict" : true,
+  "undef" : true,
+  "trailing" : true,
+
+  // Relaxing
+  "expr": true,
+
+  "predef": [
+    "describe",
+    "it",
+    "beforeEach",
+    "afterEach"
+  ]
+}

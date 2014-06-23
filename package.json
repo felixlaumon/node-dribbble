@@ -8,15 +8,19 @@
     "url": "git@github.com:felixlaumon/node-dribbble.git"
   },
   "scripts": {
-    "test": "make test"
+    "test": "./node_modules/.bin/mocha --reporter spec ./test/index.test.js"
   },
   "engines": {
-    "node": ">=0.4"
+    "node": ">=0.10"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bluebird": "^2.1.3"
+  },
   "devDependencies": {
-    "mocha": "",
-    "should": ""
+    "chai": "^1.9.1",
+    "chai-as-promised": "^4.1.1",
+    "mocha": "^1.20.1",
+    "sinon": "^1.10.2"
   },
   "optionalDependencies": {}
 }
