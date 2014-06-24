@@ -6,6 +6,8 @@
 
 ## Installation
 
+Requires node >= 0.10
+
 ````
 npm install node-dribbble
 ````

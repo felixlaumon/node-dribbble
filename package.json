@@ -8,10 +8,10 @@
     "url": "git@github.com:felixlaumon/node-dribbble.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --reporter spec ./test/index.test.js"
+    "test": "make test"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": "~0.10.28"
   },
   "dependencies": {
     "bluebird": "^2.1.3"
