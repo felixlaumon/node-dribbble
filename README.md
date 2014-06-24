@@ -1,50 +1,76 @@
-# Dribbble API Wrapper for Node and CommonJS
+# node-dribbble
 
-![Dribbble](http://dribbble.com/images/dribbble-ball-big.png?1336176471)
+> Dribble API wrapper for node.js with Promise
 
 [![Build Status](https://secure.travis-ci.org/felixlaumon/node-dribbble.png)](http://travis-ci.org/felixlaumon/node-dribbble)
-
-`node-dribbble` is a simple Javascript Wrapper for Dribbble's API. Supports pagination. Simple interface.
 
 ## Installation
 
 ````
-npm install dribbble
+npm install node-dribbble
 ````
 
-## Usage
-
-Make a new object by
+## Getting Started
 
 ````javascript
-var Dribbble = require('../lib/dribbble').Dribbble;
-var dribbble = new Dribbble();
+var dribbble = require('node-dribbble');
+dribbble.shots('popular', { page: 3, per_page: 30 }).then(function (data) {
+  return data.shots
+});
 ````
 
-## Example
+## API
 
-````javascript
+Pagination is supported through the `opts` object. E.g. `{ page: 3, per_page: 30 }`
 
-// dribbble.shot
-dribbble.shot(21603, function(data){});
+### .shot(id)
 
-dribbble.shot(21603).rebound(function(data){});
-dribbble.shot(21603).comments(function(data){});
-dribbble.shot(21603).comments(1, 15, function(data){}); // 1 is the # of page, 15 is results per page
+`/shot/:id`. Returns details for a shot specified by :id.
 
-// dribbble.shots
-dribbble.shots("popular", function(data){});
-dribbble.shots("everyone", function(data){});
-dribbble.shots("debuts", function(data){});
+#### .shot(id).rebounds()
 
-// dribbble.player
-dribbble.player(1, function(data){});
-dribbble.player("simplebits", function(data){});
+`/shots/:id/rebounds`. Returns the set of rebounds (shots in response to a shot) for the shot specified by :id.
 
-dribbble.player("simplebits").followers(function(data){});
-dribbble.player("simplebits").following(function(data){});
-dribbble.player("simplebits").drfatees(function(data){});
-dribbble.player("simplebits").shots(function(data){});
-dribbble.player("simplebits").followingShots(function(data){}); // Player's Following Users' Shots
-dribbble.player("simplebits").likes(function(data){});
-````
+#### .shot(id).comments()
+
+`/shots/:id/comments`. Returns the set of comments for the shot specified by :id.
+
+---
+
+### .shots(list, opts)
+
+`/shots/:list`. Returns the specified list of shots where :list has one of the following values: `debuts`, `everyone`, `popular`
+
+---
+
+### .player(id)
+
+`/players/:id`. Returns profile details for a player specified by :id.
+
+#### .player(id).shots()
+
+`/players/:id/shots`. Returns the most recent shots for the player specified by :id
+
+#### .player(id).followingShots()
+
+`/players/:id/shots/following`. Returns the most recent shots published by those the player specified by :id is following.
+
+#### .player(id).likes()
+
+`/players/:id/shots/likes`. Returns shots liked by the player specified by :id.
+
+#### .player(id).followers()
+
+`/players/:id/followers`. Returns the list of followers for a player specified by :id.
+
+#### .player(id).followingPlayers()
+
+`/players/:id/following`. Returns the list of players followed by the player specified by :id.
+
+#### .player(id).draftees()
+
+`/players/:id/draftees`. Returns the list of players drafted by the player specified by :id.
+
+## Roadmap
+
+- browser support (jsonp and browserify)
